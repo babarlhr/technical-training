@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <div id='dashboard_container' class='container' t-name='awesome_tshirt.dashboard'>
+        <div class='col'>
+            <div class='row'>
+                <h1 class='counter'>
+                	<t t-esc='widget.counter' />
+                </h1>
+            </div>
+        </div>
+    </div>
+</odoo>

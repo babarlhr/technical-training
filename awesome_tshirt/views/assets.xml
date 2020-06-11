@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id='backend_assets' name='awesome_tshirt' inherit_id='web.assets_backend'>
+        <xpath expr='.' position='inside'>
+         	<script type='text/javascript' src='/awesome_tshirt/static/src/js/awesome_dashboard.js'></script>
+         	<script type='text/javascript' src='/awesome_tshirt/static/src/js/counter.js'></script>
+        </xpath>
+    </template>
+</odoo>

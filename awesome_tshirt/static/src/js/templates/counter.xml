@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <div id='counter_container' class='container' t-name='awesome_tshirt.counter'>
+        <h5>Counter</h5>
+        <div class='val'>
+            <t t-esc='widget.count' />
+        </div>
+        <button class='btn increment'>+</button>
+    </div>
+</odoo>
