@@ -11,6 +11,10 @@ odoo.define('awesome_tshirt.dashboard', function(require){
             var Counter = require('awesome_tshirt.counter');
             var counter = new Counter(this, 0);
             counter.appendTo(this.$('.counter'));
+
+            var Menubar = require('awesome_tshirt.menubar');
+            var menubar = new Menubar(this);
+            menubar.appendTo(this.$('.menubar'));
         },
     });
     Core.action_registry.add('awesome_tshirt.dashboard', Dashboard);

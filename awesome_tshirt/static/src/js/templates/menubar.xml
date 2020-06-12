@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <div id='menubar_container' class='container' t-name='awesome_tshirt.menubar'>
+    	<div class="row">
+        <button class="btn btn-primary customers">Customers</button>
+        <button class="btn btn-primary new_orders">New Orders</button>
+        <button class="btn btn-primary cancelled_orders">Cancelled Order</button>
+    </div>
+    </div>
+</odoo>

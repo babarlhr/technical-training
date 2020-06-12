@@ -5,6 +5,7 @@
         <div class='val'>
             <t t-esc='widget.count' />
         </div>
-        <button class='btn increment'>+</button>
+        <button class='btn btn-primary increment'>+</button>
+        <button class='btn btn-primary decrement'>-</button>
     </div>
 </odoo>
