@@ -72,6 +72,7 @@ class OrderRoute(http.Controller):
             'nb_new_orders': nb_new_orders,
             'orders_by_size': {g['size']: g['quantity'] for g in orders_by_size},
             'total_amount': total_amount or 0,
+            'amount_by_orders': 0 if not nb_orders else round(total_amount / nb_orders, 2)
         }
 
     @http.route('/awesome_tshirt/bafienistalkingtoyou', type='json', auth='user')

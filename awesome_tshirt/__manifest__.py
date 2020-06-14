@@ -21,6 +21,7 @@
     'qweb': [
         'static/src/js/templates/counter.xml',
         'static/src/js/templates/menubar.xml',
+        'static/src/js/templates/statistics.xml',
         'static/src/js/templates/dashboard.xml',
     ],
     'sequence': 1,

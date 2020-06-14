@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <div id="statistics_container" class="container" t-name="awesome_tshirt.statistics">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+    Number of new orders
+    <span class="badge badge-primary badge-pill nb_new_orders"></span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+    Total amount of new orders
+    <span class="badge badge-primary badge-pill am_new_orders"></span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+    Average amount by order
+    <span class="badge badge-primary badge-pill av_am_by_orders"></span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+    Number of cancelled orders
+    <span class="badge badge-primary badge-pill nb_cancelled_orders"></span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+    Average New to Sent/Cancelled
+    <span class="badge badge-primary badge-pill av_time"></span></li>
+        </ul>
+    </div>
+</odoo>
