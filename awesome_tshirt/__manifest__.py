@@ -19,11 +19,11 @@
         'views/assets.xml',
     ],
     'qweb': [
-        'static/src/js/templates/counter.xml',
-        'static/src/js/templates/menubar.xml',
-        'static/src/js/templates/statistics.xml',
-        'static/src/js/templates/dashboard.xml',
-        'static/src/js/templates/pie_chart.xml',
+        'static/src/xml/counter.xml',
+        'static/src/xml/menubar.xml',
+        'static/src/xml/statistics.xml',
+        'static/src/xml/dashboard.xml',
+        'static/src/xml/pie_chart.xml',
     ],
     'sequence': 1,
     'license': 'AGPL-3'
