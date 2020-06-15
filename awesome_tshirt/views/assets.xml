@@ -5,6 +5,7 @@
         	<script type='text/javascript' src='/awesome_tshirt/static/src/js/counter.js'></script>
         	<script type='text/javascript' src='/awesome_tshirt/static/src/js/menubar.js'></script>
         	<script type='text/javascript' src='/awesome_tshirt/static/src/js/statistics.js'></script>
+        	<script type='text/javascript' src='/awesome_tshirt/static/src/js/pie_chart.js'></script>
          	<script type='text/javascript' src='/awesome_tshirt/static/src/js/awesome_dashboard.js'></script>
          	<link rel='stylesheet' href='/awesome_tshirt/static/src/css/custom.css'/>
         </xpath>

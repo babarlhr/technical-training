@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <div id="pie_chart_container" class="container" t-name="awesome_tshirt.pie_chart">
+        <canvas class="pie_chart_canvas"/>
+    </div>
+</odoo>
