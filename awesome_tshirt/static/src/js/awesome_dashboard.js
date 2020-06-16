@@ -3,7 +3,6 @@ odoo.define('awesome_tshirt.dashboard', function(require){
     
     var Core = require('web.core');
     var AbstractAction = require('web.AbstractAction');
-    var Pie_chart = require('awesome_tshirt.pie_chart');
 
     var Dashboard = AbstractAction.extend({
         template: "awesome_tshirt.dashboard",
@@ -21,9 +20,21 @@ odoo.define('awesome_tshirt.dashboard', function(require){
                 this._super.apply(this, arguments)
                 ]);
         },
-        _display_chart: function () {
-            var chart = new Pie_chart(this, this.data.orders_by_size);
-            return chart.appendTo(this.$('.pie_chart'));
+        _update_data: function () {
+            this.statistics.data = this.data;
+            this.statistics.appendTo(this.$('.statistics'));
+
+            this.chart.orders_by_size = this.data.orders_by_size;
+            this.chart.appendTo(this.$('.pie_chart'));
+        },
+        _reload: function () {
+            return this._get_statistics().then(() => this._update_data());
+        },
+        on_attach_callback: function () {
+            this._reloadInterval = setInterval(this._reload.bind(this), 30000);
+        },
+        on_detach_callback: function () {
+            clearInterval(this._reloadInterval);
         },
         start: function () {
             var Counter = require('awesome_tshirt.counter');
@@ -35,10 +46,15 @@ odoo.define('awesome_tshirt.dashboard', function(require){
             menubar.appendTo(this.$('.menubar'));
 
             var Statistics = require('awesome_tshirt.statistics');
-            var statistics = new Statistics(this, this.data);
-            statistics.appendTo(this.$('.statistics'));
+            this.statistics = new Statistics(this, this.data);
+            this.statistics.appendTo(this.$('.statistics'));
 
-            this._display_chart();
+            var Pie_chart = require('awesome_tshirt.pie_chart');
+            this.chart = new Pie_chart(this, this.data.orders_by_size);
+            this.chart.appendTo(this.$('.pie_chart'));
+
+            this._update_data();
+            this._super.apply(this, arguments);
         },
     });
     Core.action_registry.add('awesome_tshirt.dashboard', Dashboard);

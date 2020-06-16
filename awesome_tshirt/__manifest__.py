@@ -23,7 +23,6 @@
         'static/src/xml/menubar.xml',
         'static/src/xml/statistics.xml',
         'static/src/xml/dashboard.xml',
-        'static/src/xml/pie_chart.xml',
     ],
     'sequence': 1,
     'license': 'AGPL-3'
