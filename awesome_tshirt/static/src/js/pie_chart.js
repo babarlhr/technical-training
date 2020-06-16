@@ -40,7 +40,17 @@ odoo.define('awesome_tshirt.pie_chart', function(require){
                         backgroundColor: this._get_colors(),
                     }],
                 },
+                options: {
+                    onClick: this._open_size_orders.bind(this),
+                },
             });
+        },
+        _open_size_orders: function (ev, chart) {
+            if (chart) {
+                this.trigger_up('get_size_orders', {
+                    size: this.sizes[chart[0]._index],
+                });
+            }
         },
         start: function () {
             this._render();

@@ -3,10 +3,39 @@ odoo.define('awesome_tshirt.dashboard', function(require){
     
     var Core = require('web.core');
     var AbstractAction = require('web.AbstractAction');
-
+    var _t = Core._t;
+    
     var Dashboard = AbstractAction.extend({
         template: "awesome_tshirt.dashboard",
 
+        custom_events: {
+            get_size_orders: '_get_size_orders',
+            get_state_orders: '_get_state_orders',
+        },
+        _get_orders: function (name, filter) {
+            return this.do_action({
+                res_model: 'awesome_tshirt.order',
+                type: 'ir.actions.act_window',
+                views: [[false, 'list'], [false, 'form']],
+                name: name,
+                domain: filter
+            });
+        },
+        _get_size_orders: function (ev) {
+            this._get_orders(
+                _.str.sprintf(_t("%s Orders"), ev.data.size.toUpperCase()),
+                [['size', '=', ev.data.size]],
+            );
+        },
+        _get_state_orders: function (ev) {
+            this._get_orders(
+                _.str.sprintf(_t("%s Orders during last week"), ev.data.state),
+                [
+                    ['state', '=', ev.data.state],
+                    ['create_date', '>=', ev.data.create_date]
+                ],
+            );
+        },
         _get_statistics: function () {
             return this._rpc({
                 route: '/awesome_tshirt/statistics',
