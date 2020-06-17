@@ -7,6 +7,7 @@ odoo.define('awesome_tshirt.dashboard', function(require){
     
     var Dashboard = AbstractAction.extend({
         template: "awesome_tshirt.dashboard",
+        hasControlPanel: true,
 
         custom_events: {
             get_size_orders: '_get_size_orders',
@@ -66,13 +67,15 @@ odoo.define('awesome_tshirt.dashboard', function(require){
             clearInterval(this._reloadInterval);
         },
         start: function () {
+            this._super.apply(this, arguments);
+
             var Counter = require('awesome_tshirt.counter');
             var counter = new Counter(this, 0);
             counter.appendTo(this.$('.counter'));
 
             var Menubar = require('awesome_tshirt.menubar');
             var menubar = new Menubar(this);
-            menubar.appendTo(this.$('.menubar'));
+            menubar.appendTo(this.$('.o_cp_buttons'));
 
             var Statistics = require('awesome_tshirt.statistics');
             this.statistics = new Statistics(this, this.data);
@@ -83,7 +86,6 @@ odoo.define('awesome_tshirt.dashboard', function(require){
             this.chart.appendTo(this.$('.pie_chart'));
 
             this._update_data();
-            this._super.apply(this, arguments);
         },
     });
     Core.action_registry.add('awesome_tshirt.dashboard', Dashboard);

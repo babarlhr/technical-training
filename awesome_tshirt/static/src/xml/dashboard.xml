@@ -3,17 +3,7 @@
     <div id='dashboard_container' class='container' t-name='awesome_tshirt.dashboard'>
         <div class='col-12'>
             <div class='row'>
-            	<h1>Dashboard</h1>
-            </div>
-        </div>
-        <div class='col-12'>
-            <div class='row'>
             	<span class='counter'/>
-            </div>
-        </div>
-        <div class='col-12'>
-            <div class='row'>
-            	<div class="menubar"></div>
             </div>
         </div>
          <div class='col-12'>
