@@ -1,4 +1,4 @@
-odoo.define('awesome_tshirt.dashboard', function(require){
+odoo.define('awesome_tshirt.dashboard', function(require) {
     'use strict';
     
     var Core = require('web.core');
@@ -10,10 +10,10 @@ odoo.define('awesome_tshirt.dashboard', function(require){
         hasControlPanel: true,
 
         custom_events: {
-            get_size_orders: '_get_size_orders',
-            get_state_orders: '_get_state_orders',
+            getSizeOrders: '_onGetSizeOrders',
+            getStateOrders: '_onGetStateOrders',
         },
-        _get_orders: function (name, filter) {
+        _getOrders: function (name, filter) {
             return this.do_action({
                 res_model: 'awesome_tshirt.order',
                 type: 'ir.actions.act_window',
@@ -22,14 +22,14 @@ odoo.define('awesome_tshirt.dashboard', function(require){
                 domain: filter
             });
         },
-        _get_size_orders: function (ev) {
-            this._get_orders(
+        _onGetSizeOrders: function (ev) {
+            this._getOrders(
                 _.str.sprintf(_t("%s Orders"), ev.data.size.toUpperCase()),
                 [['size', '=', ev.data.size]],
             );
         },
-        _get_state_orders: function (ev) {
-            this._get_orders(
+        _onGetStateOrders: function (ev) {
+            this._getOrders(
                 _.str.sprintf(_t("%s Orders during last week"), ev.data.state),
                 [
                     ['state', '=', ev.data.state],
@@ -37,7 +37,7 @@ odoo.define('awesome_tshirt.dashboard', function(require){
                 ],
             );
         },
-        _get_statistics: function () {
+        _getStatistics: function () {
             return this._rpc({
                 route: '/awesome_tshirt/statistics',
             }).then((data) => {
@@ -46,11 +46,11 @@ odoo.define('awesome_tshirt.dashboard', function(require){
         },
         willStart: function () {
             return Promise.all([
-                this._get_statistics(),
+                this._getStatistics(),
                 this._super.apply(this, arguments)
                 ]);
         },
-        _update_data: function () {
+        _updateData: function () {
             this.statistics.data = this.data;
             this.statistics.appendTo(this.$('.statistics'));
 
@@ -58,7 +58,7 @@ odoo.define('awesome_tshirt.dashboard', function(require){
             this.chart.appendTo(this.$('.pie_chart'));
         },
         _reload: function () {
-            return this._get_statistics().then(() => this._update_data());
+            return this._getStatistics().then(() => this._updateData());
         },
         on_attach_callback: function () {
             this._reloadInterval = setInterval(this._reload.bind(this), 30000);
@@ -71,7 +71,7 @@ odoo.define('awesome_tshirt.dashboard', function(require){
 
             var Counter = require('awesome_tshirt.counter');
             var counter = new Counter(this, 0);
-            counter.appendTo(this.$('.counter'));
+            counter.appendTo(this.$('.o_counter'));
 
             var Menubar = require('awesome_tshirt.menubar');
             var menubar = new Menubar(this);
@@ -79,13 +79,13 @@ odoo.define('awesome_tshirt.dashboard', function(require){
 
             var Statistics = require('awesome_tshirt.statistics');
             this.statistics = new Statistics(this, this.data);
-            this.statistics.appendTo(this.$('.statistics'));
+            this.statistics.appendTo(this.$('.o_statistics'));
 
-            var Pie_chart = require('awesome_tshirt.pie_chart');
-            this.chart = new Pie_chart(this, this.data.orders_by_size);
-            this.chart.appendTo(this.$('.pie_chart'));
+            var PieChart = require('awesome_tshirt.pieChart');
+            this.chart = new PieChart(this, this.data.orders_by_size);
+            this.chart.appendTo(this.$('.o_pie_chart'));
 
-            this._update_data();
+            this._updateData();
         },
     });
     Core.action_registry.add('awesome_tshirt.dashboard', Dashboard);

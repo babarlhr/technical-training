@@ -1,12 +1,12 @@
-odoo.define('awesome_tshirt.pie_chart', function(require){
+odoo.define('awesome_tshirt.pieChart', function(require) {
     'use strict';
     
     var Core = require('web.core');
     var Widget = require('web.Widget');
 
-    var Pie_chart = Widget.extend({
+    var PieChart = Widget.extend({
         tagName: 'canvas',
-        jsLibs: ['/awesome_tshirt/static/src/js/lib/Chart.js'],
+        jsLibs: ['/awesome_tshirt/static/lib/Chart.js/Chart.js'],
 
         colors: {
             cyan:  'rgb(01, 255, 255)',
@@ -16,12 +16,12 @@ odoo.define('awesome_tshirt.pie_chart', function(require){
             yellow: 'rgb(255, 255, 0)',
         },
 
-        init: function (parent, orders_by_size) {
+        init: function (parent, ordersBySize) {
             this._super.apply(this, arguments);
             this.sizes = ['xl', 'xxl', 's', 'm', 'l'];
-            this.orders_by_size = orders_by_size;
+            this.ordersBySize = ordersBySize;
         },
-        _get_colors: function () {
+        _getColors: function () {
             return [
                 this.colors.cyan, 
                 this.colors.blue,
@@ -36,18 +36,18 @@ odoo.define('awesome_tshirt.pie_chart', function(require){
                 data: {
                     labels: this.sizes,
                     datasets: [{
-                        data: _.map(this.sizes, (s) => this.orders_by_size[s] || 0),
-                        backgroundColor: this._get_colors(),
+                        data: _.map(this.sizes, (s) => this.ordersBySize[s] || 0),
+                        backgroundColor: this._getColors(),
                     }],
                 },
                 options: {
-                    onClick: this._open_size_orders.bind(this),
+                    onClick: this._onOpenSizeOrders.bind(this),
                 },
             });
         },
-        _open_size_orders: function (ev, chart) {
-            if (chart) {
-                this.trigger_up('get_size_orders', {
+        _onOpenSizeOrders: function (ev, chart) {
+            if (chart && chart.length) {
+                this.trigger_up('getSizeOrders', {
                     size: this.sizes[chart[0]._index],
                 });
             }
@@ -57,6 +57,6 @@ odoo.define('awesome_tshirt.pie_chart', function(require){
             return this._super.apply(this, arguments);
         },
     });
-    Core.action_registry.add('awesome_tshirt.pie_chart', Pie_chart);
-    return Pie_chart;
+    Core.action_registry.add('awesome_tshirt.pieChart', PieChart);
+    return PieChart;
 });

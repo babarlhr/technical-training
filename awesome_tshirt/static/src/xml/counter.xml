@@ -2,10 +2,10 @@
 <odoo>
     <div id='counter_container' class='container' t-name='awesome_tshirt.counter'>
         <h5>Counter</h5>
-        <div class='val'>
+        <div class='o_val'>
             <t t-esc='widget.count' />
         </div>
-        <button class='btn btn-primary increment'>+</button>
-        <button class='btn btn-primary decrement'>-</button>
+        <button class='btn btn-primary o_increment_btn'>+</button>
+        <button class='btn btn-primary o_decrement_btn'>-</button>
     </div>
 </odoo>

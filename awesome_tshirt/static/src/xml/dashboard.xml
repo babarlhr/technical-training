@@ -3,17 +3,17 @@
     <div id='dashboard_container' class='container' t-name='awesome_tshirt.dashboard'>
         <div class='col-12'>
             <div class='row'>
-            	<span class='counter'/>
+            	<span class='o_counter'/>
             </div>
         </div>
          <div class='col-12'>
             <div class='row'>
-            	<div class="statistics"></div>
+            	<div class="o_statistics"></div>
             </div>
         </div>
         <div class='col-12'>
             <div class='row'>
-            	<div class="pie_chart"></div>
+            	<div class="o_pie_chart"></div>
             </div>
         </div>
     </div>

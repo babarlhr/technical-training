@@ -1,4 +1,4 @@
-odoo.define('awesome_tshirt.statistics', function(require){
+odoo.define('awesome_tshirt.statistics', function(require) {
     'use strict';
     
     var Core = require('web.core');

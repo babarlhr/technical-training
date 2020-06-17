@@ -1,4 +1,4 @@
-odoo.define('awesome_tshirt.counter', function(require){
+odoo.define('awesome_tshirt.counter', function(require) {
     'use strict';
     
     var Core = require('web.core');
@@ -8,21 +8,21 @@ odoo.define('awesome_tshirt.counter', function(require){
         template: 'awesome_tshirt.counter',
 
         events: {
-            'click button.increment': '_increment',
-            'click button.decrement': '_decrement',
+            'click .o_increment_btn': '_onIncrement',
+            'click .o_decrement_btn': '_onDecrement',
         },
         init: function (parent, value) {
             this._super(parent);
             this.count = value;
         },
         _render: function () {
-            this.$('.val').text(this.count);
+            this.$('.o_val').text(this.count);
         },
-        _increment: function () {
+        _onIncrement: function () {
             this.count++;
             this._render();
         },
-        _decrement: function () {
+        _onDecrement: function () {
             this.count--;
             this._render();
         },

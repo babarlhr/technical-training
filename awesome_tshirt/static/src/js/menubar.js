@@ -1,4 +1,4 @@
-odoo.define('awesome_tshirt.menubar', function(require){
+odoo.define('awesome_tshirt.menubar', function(require) {
     'use strict';
     
     var Core = require('web.core');
@@ -8,29 +8,29 @@ odoo.define('awesome_tshirt.menubar', function(require){
         template: 'awesome_tshirt.menubar',
 
         events: {
-            'click button.customers': '_get_customers',
-            'click button.new_orders': '_get_new_orders',
-            'click button.cancelled_orders': '_get_cancelled_orders'
+            'click .o_customers_btn': '_onGetCustomers',
+            'click .o_new_orders_btn': '_onGetNewOrders',
+            'click .o_cancelled_orders_btn': '_onGetCancelledOrders'
         },
         init: function (parent) {
             this._super(parent);
         },
-        _get_customers: function () {
+        _onGetCustomers: function () {
             this.do_action('base.action_partner_customer_form');
         },
-        _last_week: function (){
+        _lastWeek: function (){
             return new Date(new Date().getTime() - 604800000)
         },
-        _get_new_orders: function (ev) {
-            this.trigger_up('get_state_orders', {
+        _onGetNewOrders: function (ev) {
+            this.trigger_up('getStateOrders', {
                 state: 'new',
-                create_date: this._last_week(),
+                create_date: this._lastWeek(),
             });
         },
-        _get_cancelled_orders: function (ev) {
-            this.trigger_up('get_state_orders', {
+        _onGetCancelledOrders: function (ev) {
+            this.trigger_up('getStateOrders', {
                 state: 'cancelled',
-                create_date: this._last_week(),
+                create_date: this._lastWeek(),
             });
         }
     });
