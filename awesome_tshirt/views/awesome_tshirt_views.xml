@@ -17,6 +17,7 @@
                 <field name="size"/>
                 <field name="quantity"/>
                 <field name="amount"/>
+                <field name="is_late" widget="isLate"/>
               </group>
               <group>
                 <field name="image_url" widget="imagePreview"/>
@@ -53,6 +54,9 @@
                 <div>Size: <field name="size"/></div>
                 <div>Quantity: <field name="quantity"/></div>
                 <div>Amount: <field name="amount"/></div>
+                <div>
+                  <field name="is_late" widget="isLate"/>
+                </div>
               </div>
             </t>
           </templates>
@@ -68,6 +72,7 @@
           <field name="size"/>
           <field name="quantity"/>
           <field name="amount"/>
+          <field name="is_late" widget="isLate" options="{'notLateColor':'#00FFFF'}"/>
         </tree>
       </field>
     </record>
@@ -85,7 +90,7 @@
     <record model="ir.actions.act_window" id="orders">
       <field name="name">Orders</field>
       <field name="res_model">awesome_tshirt.order</field>
-      <field name="view_mode">kanban,form</field>
+      <field name="view_mode">kanban,form,tree</field>
       <field name="context">{'group_by': ['state']}</field>
     </record>
 
