@@ -12,6 +12,7 @@
           </header>
           <sheet>
             <group>
+               <widget name="warning"/>
               <group>
                 <field name="customer_id"/>
                 <field name="size"/>
