@@ -11,7 +11,7 @@
     'category': 'Extra Tools',
     'version': '2.0',
     'application': True,
-    'depends': ['base', 'web'],
+    'depends': ['base', 'web', 'base_geolocalize'],
     'data': [
         'security/ir.model.access.csv',
         'views/awesome_tshirt_views.xml',
@@ -23,6 +23,7 @@
         'static/src/xml/menubar.xml',
         'static/src/xml/statistics.xml',
         'static/src/xml/dashboard.xml',
+        'static/src/xml/form.xml',
     ],
     'sequence': 1,
     'license': 'AGPL-3'

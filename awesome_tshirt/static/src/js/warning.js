@@ -34,7 +34,7 @@ odoo.define('awesome_tshirt.warning', function (require) {
     		this._render();
     		return this._super.apply(this, arguments);
     	},
-    })
+    });
 
     widgetRegistry.add('warning', Warning);
     return Warning;

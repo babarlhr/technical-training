@@ -19,7 +19,7 @@ odoo.define('awesome_tshirt.isLate', function (require) {
 				backgroundColor: this.value ? this.lateColor : this.notLateColor
 			}));
 		},
-	})
+	});
 
 	fieldRegistry.add('isLate', isLate);
 	return isLate;

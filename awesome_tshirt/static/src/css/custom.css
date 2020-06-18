@@ -1,6 +1,7 @@
 .badge {
     margin-left: 20px;
 }
+
 .o_imagePreview {
     width: 100px;
     height: 100px;
@@ -10,4 +11,20 @@
     width: 12px;
     height: 12px;
     border-radius: 6px;
+}
+
+.o_customer_form_buttons{
+	display: inline-flex;
+}
+
+.o_geolocalize {
+    margin-right: 10px;
+}
+
+.o_order_form_buttons{
+	display: inline-flex;
+}
+
+.o_printLabel {
+    margin-right: 10px;
 }
