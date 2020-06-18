@@ -8,6 +8,7 @@ odoo.define('awesome_tshirt.orderFormView', function (require) {
     var formView = require('web.FormView');
 
     var qweb = Core.qweb;
+    var _t = Core._t;
 
     var orderFormController = formController.extend({
         events: {
@@ -31,8 +32,14 @@ odoo.define('awesome_tshirt.orderFormView', function (require) {
                 model: 'awesome_tshirt.order',
                 method: 'print_label',
                 args: [resId],
-            }).then(() => {
+            }).then((data) => {
                 this.clicked = false;
+                if (data) {
+                    this.do_notify(_t("Success"), _t("Label was printed!"));
+                }
+                else {
+                    this.do_warn(_t('Failure'), _t("Can't print label!"), {sticky: true});
+                }
                 this.reload();
             });
         },
