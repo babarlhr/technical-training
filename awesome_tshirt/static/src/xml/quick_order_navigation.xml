@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <li class="o_quick_order_nav" t-name="awesome_tshirt.quick_order_navigation">
+        <input type="input" class="o_input"/>
+    </li>
+</odoo>

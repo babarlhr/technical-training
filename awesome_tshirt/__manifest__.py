@@ -24,6 +24,7 @@
         'static/src/xml/statistics.xml',
         'static/src/xml/dashboard.xml',
         'static/src/xml/form.xml',
+        'static/src/xml/quick_order_navigation.xml',
     ],
     'sequence': 1,
     'license': 'AGPL-3'

@@ -28,3 +28,8 @@
 .o_printLabel {
     margin-right: 10px;
 }
+
+.o_quick_order_nav > input {
+	margin-top: 10px;
+	padding: 2px;
+}

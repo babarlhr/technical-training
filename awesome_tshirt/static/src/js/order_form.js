@@ -49,7 +49,7 @@ odoo.define('awesome_tshirt.orderFormView', function (require) {
                 var rec = this.model.get(this.handle, {raw: true});
                 var state = rec.data.state === 'printed';
                 var editMode = this.mode === 'edit';
-                this.$('.o_printLabel')
+                this.$buttons.find('.o_printLabel')
                     .toggleClass('btn-primary', state)
                     .toggleClass('btn-secondary', !state)
                     .attr('disabled', editMode);
