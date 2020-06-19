@@ -33,3 +33,7 @@
 	margin-top: 10px;
 	padding: 2px;
 }
+
+.o_custom_message > p {
+    padding: 4px;
+}

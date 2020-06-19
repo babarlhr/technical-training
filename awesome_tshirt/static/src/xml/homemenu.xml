@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <div t-name="HomeMenu.CustomMessage">
+        <div class="badge-pill badge-warning o_custom_message">
+        	<p>Bafien Ckinpaers is watching you!</p>
+    	</div>
+    </div>
+</odoo>
