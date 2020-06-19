@@ -1,11 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <div id='counter_container' class='container' t-name='awesome_tshirt.counter'>
-        <h5>Counter</h5>
-        <div class='o_val'>
-            <t t-esc='widget.count' />
+    <div id="counter_container" class="container" t-name="awesome_tshirt.counter">
+        <h3 class="display-4">Counter</h3>
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text o_val">
+                    <t t-esc="widget.count" />
+                </p>
+                <button class="btn btn-primary o_increment_btn card-link">+</button>
+                <button class="btn btn-primary o_decrement_btn card-link">-</button>
+            </div>
         </div>
-        <button class='btn btn-primary o_increment_btn'>+</button>
-        <button class='btn btn-primary o_decrement_btn'>-</button>
     </div>
 </odoo>

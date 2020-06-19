@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <div id="statistics_container" class="container" t-name="awesome_tshirt.statistics">
+         <h3 class="display-4">Statistics</h3>
         <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center">
     Number of new orders

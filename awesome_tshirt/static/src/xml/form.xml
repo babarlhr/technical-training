@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<templates id="template" xml:space="preserve">
-	<t t-name="customerForm.buttons">
+<odoo>
+	<div t-name="customerForm.buttons">
 		<button type="button" class="btn btn-primary o_geolocalize">Geolocate</button>
-	</t>
-	<t t-name="orderForm.buttons">
+	</div>
+	<div t-name="orderForm.buttons">
 		<button type="button" class="btn o_printLabel">Print Label</button>
-	</t>
-</templates>
+	</div>
+</odoo>

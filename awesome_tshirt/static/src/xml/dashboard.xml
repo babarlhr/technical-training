@@ -1,19 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <div id='dashboard_container' class='container' t-name='awesome_tshirt.dashboard'>
-        <div class='col-12'>
-            <div class='row'>
-            	<span class='o_counter'/>
-            </div>
-        </div>
-         <div class='col-12'>
-            <div class='row'>
-            	<div class="o_statistics"></div>
-            </div>
-        </div>
-        <div class='col-12'>
-            <div class='row'>
-            	<div class="o_pie_chart"></div>
+    <div id="dashboard_container" class="container-fluid" t-name="awesome_tshirt.dashboard">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <span class="o_counter" />
+                    <div class="o_statistics"></div>
+                </div>
+                <div class="col-6">
+                    <h3 class="display-4">T-shirts by size</h3>
+                    <div class="o_pie_chart"></div>
+                </div>
             </div>
         </div>
     </div>
