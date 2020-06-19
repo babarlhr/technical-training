@@ -2,7 +2,9 @@
 <odoo>
     <div t-name="HomeMenu.CustomMessage">
         <div class="badge-pill badge-warning o_custom_message">
-        	<p>Bafien Ckinpaers is watching you!</p>
+        	<p>
+        		<t t-esc="message"/>
+        	</p>
     	</div>
     </div>
 </odoo>
