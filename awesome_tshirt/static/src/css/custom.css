@@ -13,16 +13,16 @@
     border-radius: 6px;
 }
 
-.o_customer_form_buttons{
-	display: inline-flex;
+.o_customer_form_buttons {
+    display: inline-flex;
 }
 
 .o_geolocalize {
     margin-right: 10px;
 }
 
-.o_order_form_buttons{
-	display: inline-flex;
+.o_order_form_buttons {
+    display: inline-flex;
 }
 
 .o_printLabel {
@@ -30,10 +30,28 @@
 }
 
 .o_quick_order_nav > input {
-	margin-top: 10px;
-	padding: 2px;
+    margin-top: 10px;
+    padding: 2px;
 }
 
 .o_custom_message > p {
     padding: 4px;
 }
+
+.o_order_kanban_view > .o_content {
+    display: flex;
+}
+
+.o_customer_search {
+    padding: 6px;
+    width: 100%;
+    border: 0px 1px;
+}
+
+.o_customer_sidebar {
+    width: 200px;
+    border-right: 1px solid #e4e7eb;
+    overflow: auto;
+    cursor: pointer;
+}
+

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <div t-name="OrderKanban.CustomerSidebar" class="o_customer_sidebar">
+        <input class="search_input o_customer_search" type="input" name="" placeholder="Find a customer..." />
+        <t t-call="OrderKanban.CustomerList" />
+    </div>
+    <ul t-name="OrderKanban.CustomerList" class="list-group o_customer_list">
+        <t t-foreach="customers" t-as="customer">
+            <li class="list-group-item">
+                <a t-att-data-id="customer.id" t-attf-class="o_customer #{customer.id === activeCustomerID ? 'o_active' : ''}">
+                    <t t-esc="customer.display_name" />
+                </a>
+            </li>
+        </t>
+    </ul>
+</odoo>

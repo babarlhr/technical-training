@@ -23,9 +23,10 @@
         'static/src/xml/menubar.xml',
         'static/src/xml/statistics.xml',
         'static/src/xml/dashboard.xml',
-        'static/src/xml/form.xml',
+        'static/src/xml/order_form.xml',
         'static/src/xml/quick_order_navigation.xml',
         'static/src/xml/homemenu.xml',
+        'static/src/xml/order_kanban.xml',
     ],
     'sequence': 1,
     'license': 'AGPL-3'
